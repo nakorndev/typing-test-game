@@ -6,16 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <script src="game.js" defer></script>
 </head>
 <body>
     <div class="section">
         <div class="container">
-            <div class="box" style="max-width: 300px; margin: auto;">
-                <h1 class="title">Typing Test Game</h1>
-                <hr>
-                <button class="button is-link is-medium is-fullwidth">เริ่มเกม</button>
+
+            <div id="scenePortal">
+                <div class="box" style="max-width: 300px; margin: auto;">
+                    <h1 class="title">Typing Test Game</h1>
+                    <hr>
+                    <button onclick="gameStart()" class="button is-link is-medium is-fullwidth">เริ่มเกม</button>
+                </div>
             </div>
+
+            <div id="sceneGame" style="display: none;">
+                <h1 class="title">Game?</h1>
+            </div>
+
         </div>
     </div>
+
+    <!-- <script src="game.js"></script> -->
 </body>
 </html>
