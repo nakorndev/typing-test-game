@@ -4,16 +4,30 @@ const words = [
     'Cherry'
 ]
 
+let duration = 10
+
 const scenePortal = document.getElementById('scenePortal')
 const sceneGame = document.getElementById('sceneGame')
 const gameScore = document.getElementById('gameScore')
 const typeWord = document.getElementById('typeWord')
 const typeAnswer = document.getElementById('typeAnswer')
+const gameDuration = document.getElementById('gameDuration')
 
 function gameStart () {
     scenePortal.style.display = 'none'
     sceneGame.style.display = 'block'
     createWord()
+    startCountDuration()
+}
+
+function startCountDuration () {
+    gameDuration.innerText = duration
+    const durationInterval = setInterval(() => {
+        gameDuration.innerText = duration--
+        if (duration < 0) {
+            clearInterval(durationInterval)
+        }
+    }, 1000)
 }
 
 function increaseScore () {
@@ -35,6 +49,10 @@ function createWord () {
     typeWord.value = words[randomIndex]
 }
 
+function resetAnswer () {
+    typeAnswer.value = ''
+}
+
 function submitAnswer (event) {
     event.preventDefault()
     if (typeWord.value == typeAnswer.value) {
@@ -42,4 +60,5 @@ function submitAnswer (event) {
     } else {
         decreaseScore()
     }
+    resetAnswer()
 }

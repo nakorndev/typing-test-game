@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="game.css">
     <script src="game.js" defer></script>
 </head>
 <body>
@@ -22,8 +23,15 @@
 
             <div id="sceneGame" style="display: none;">
                 <h1 class="title">
-                    คะแนน:
-                    <span id="gameScore">0</span>
+                    <div class="title-left">
+                        คะแนน:
+                        <span id="gameScore">0</span>
+                    </div>
+                    <div class="title-right">
+                        เวลาที่เหลือ:
+                        <span id="gameDuration">0</span>
+                        วินาที
+                    </div>
                 </h1>
                 <hr>
                 <form onsubmit="submitAnswer(event)">
