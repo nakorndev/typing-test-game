@@ -18,6 +18,12 @@ function gameStart () {
 
 function increaseScore () {
     gameScore.innerText = (Number(gameScore.innerText) + 1)
+    createWord()
+}
+
+function decreaseScore () {
+    gameScore.innerText = (Number(gameScore.innerText) - 1)
+    createWord()
 }
 
 function random (min, max) {
@@ -27,4 +33,13 @@ function random (min, max) {
 function createWord () {
     const randomIndex = random(0, words.length - 1)
     typeWord.value = words[randomIndex]
+}
+
+function submitAnswer (event) {
+    event.preventDefault()
+    if (typeWord.value == typeAnswer.value) {
+        increaseScore()
+    } else {
+        decreaseScore()
+    }
 }
